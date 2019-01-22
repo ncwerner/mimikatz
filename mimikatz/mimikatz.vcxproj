@@ -100,6 +100,7 @@
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ItemGroup>
+    <ClCompile Include="..\modules\kull_m_acr.c" />
     <ClCompile Include="..\modules\kull_m_asn1.c" />
     <ClCompile Include="..\modules\kull_m_busylight.c" />
     <ClCompile Include="..\modules\kull_m_cabinet.c" />
@@ -108,6 +109,7 @@
     <ClCompile Include="..\modules\kull_m_dpapi.c" />
     <ClCompile Include="..\modules\kull_m_file.c" />
     <ClCompile Include="..\modules\kull_m_handle.c" />
+    <ClCompile Include="..\modules\kull_m_hid.c" />
     <ClCompile Include="..\modules\kull_m_kernel.c" />
     <ClCompile Include="..\modules\kull_m_key.c" />
     <ClCompile Include="..\modules\kull_m_net.c" />
@@ -115,7 +117,10 @@
     <ClCompile Include="..\modules\kull_m_minidump.c" />
     <ClCompile Include="..\modules\kull_m_output.c" />
     <ClCompile Include="..\modules\kull_m_patch.c" />
+    <ClCompile Include="..\modules\kull_m_pipe.c" />
+    <ClCompile Include="..\modules\kull_m_pn532.c" />
     <ClCompile Include="..\modules\kull_m_process.c" />
+    <ClCompile Include="..\modules\kull_m_rdm.c" />
     <ClCompile Include="..\modules\kull_m_registry.c" />
     <ClCompile Include="..\modules\kull_m_remotelib.c" />
     <ClCompile Include="..\modules\kull_m_sr98.c" />
@@ -141,17 +146,21 @@
     <ClCompile Include="mimikatz.c" />
     <ClCompile Include="modules\crypto\kuhl_m_crypto_extractor.c" />
     <ClCompile Include="modules\crypto\kuhl_m_crypto_patch.c" />
+    <ClCompile Include="modules\crypto\kuhl_m_crypto_sc.c" />
     <ClCompile Include="modules\dpapi\kuhl_m_dpapi.c" />
     <ClCompile Include="modules\dpapi\kuhl_m_dpapi_oe.c" />
     <ClCompile Include="modules\dpapi\packages\kuhl_m_dpapi_chrome.c" />
     <ClCompile Include="modules\dpapi\packages\kuhl_m_dpapi_creds.c" />
     <ClCompile Include="modules\dpapi\packages\kuhl_m_dpapi_keys.c" />
+    <ClCompile Include="modules\dpapi\packages\kuhl_m_dpapi_rdg.c" />
+    <ClCompile Include="modules\dpapi\packages\kuhl_m_dpapi_ssh.c" />
     <ClCompile Include="modules\dpapi\packages\kuhl_m_dpapi_wlan.c" />
     <ClCompile Include="modules\kerberos\kuhl_m_kerberos.c" />
     <ClCompile Include="modules\kerberos\kuhl_m_kerberos_ccache.c" />
     <ClCompile Include="modules\kerberos\kuhl_m_kerberos_claims.c" />
     <ClCompile Include="modules\kerberos\kuhl_m_kerberos_pac.c" />
     <ClCompile Include="modules\kerberos\kuhl_m_kerberos_ticket.c" />
+    <ClCompile Include="modules\kuhl_m_acr.c" />
     <ClCompile Include="modules\kuhl_m_busylight.c" />
     <ClCompile Include="modules\kuhl_m_crypto.c" />
     <ClCompile Include="modules\kuhl_m_event.c" />
@@ -163,6 +172,8 @@
     <ClCompile Include="modules\kuhl_m_net.c" />
     <ClCompile Include="modules\kuhl_m_privilege.c" />
     <ClCompile Include="modules\kuhl_m_process.c" />
+    <ClCompile Include="modules\kuhl_m_rdm.c" />
+    <ClCompile Include="modules\kuhl_m_sr98.c" />
     <ClCompile Include="modules\kuhl_m_rpc.c" />
     <ClCompile Include="modules\kuhl_m_service.c" />
     <ClCompile Include="modules\kuhl_m_service_remote.c" />
@@ -189,9 +200,9 @@
     <ClCompile Include="modules\sekurlsa\packages\kuhl_m_sekurlsa_wdigest.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\modules\kull_m_acr.h" />
     <ClInclude Include="..\modules\kull_m_asn1.h" />
     <ClInclude Include="..\modules\kull_m_busylight.h" />
-    <ClInclude Include="..\modules\kull_m_busylight_hid.h" />
     <ClInclude Include="..\modules\kull_m_cabinet.h" />
     <ClInclude Include="..\modules\kull_m_cred.h" />
     <ClInclude Include="..\modules\kull_m_crypto.h" />
@@ -199,6 +210,7 @@
     <ClInclude Include="..\modules\kull_m_dpapi.h" />
     <ClInclude Include="..\modules\kull_m_file.h" />
     <ClInclude Include="..\modules\kull_m_handle.h" />
+    <ClInclude Include="..\modules\kull_m_hid.h" />
     <ClInclude Include="..\modules\kull_m_kernel.h" />
     <ClInclude Include="..\modules\kull_m_key.h" />
     <ClInclude Include="..\modules\kull_m_net.h" />
@@ -206,7 +218,10 @@
     <ClInclude Include="..\modules\kull_m_minidump.h" />
     <ClInclude Include="..\modules\kull_m_output.h" />
     <ClInclude Include="..\modules\kull_m_patch.h" />
+    <ClInclude Include="..\modules\kull_m_pipe.h" />
+    <ClInclude Include="..\modules\kull_m_pn532.h" />
     <ClInclude Include="..\modules\kull_m_process.h" />
+    <ClInclude Include="..\modules\kull_m_rdm.h" />
     <ClInclude Include="..\modules\kull_m_registry.h" />
     <ClInclude Include="..\modules\kull_m_registry_structures.h" />
     <ClInclude Include="..\modules\kull_m_remotelib.h" />
@@ -230,11 +245,14 @@
     <ClInclude Include="mimikatz.h" />
     <ClInclude Include="modules\crypto\kuhl_m_crypto_extractor.h" />
     <ClInclude Include="modules\crypto\kuhl_m_crypto_patch.h" />
+    <ClInclude Include="modules\crypto\kuhl_m_crypto_sc.h" />
     <ClInclude Include="modules\dpapi\kuhl_m_dpapi.h" />
     <ClInclude Include="modules\dpapi\kuhl_m_dpapi_oe.h" />
     <ClInclude Include="modules\dpapi\packages\kuhl_m_dpapi_chrome.h" />
     <ClInclude Include="modules\dpapi\packages\kuhl_m_dpapi_creds.h" />
     <ClInclude Include="modules\dpapi\packages\kuhl_m_dpapi_keys.h" />
+    <ClInclude Include="modules\dpapi\packages\kuhl_m_dpapi_rdg.h" />
+    <ClInclude Include="modules\dpapi\packages\kuhl_m_dpapi_ssh.h" />
     <ClInclude Include="modules\dpapi\packages\kuhl_m_dpapi_wlan.h" />
     <ClInclude Include="modules\kerberos\kuhl_m_kerberos.h" />
     <ClInclude Include="modules\kerberos\kuhl_m_kerberos_ccache.h" />
@@ -242,6 +260,7 @@
     <ClInclude Include="modules\kerberos\kuhl_m_kerberos_pac.h" />
     <ClInclude Include="modules\kerberos\kuhl_m_kerberos_ticket.h" />
     <ClInclude Include="modules\kuhl_m.h" />
+    <ClInclude Include="modules\kuhl_m_acr.h" />
     <ClInclude Include="modules\kuhl_m_busylight.h" />
     <ClInclude Include="modules\kuhl_m_crypto.h" />
     <ClInclude Include="modules\kuhl_m_event.h" />
@@ -253,6 +272,8 @@
     <ClInclude Include="modules\kuhl_m_net.h" />
     <ClInclude Include="modules\kuhl_m_privilege.h" />
     <ClInclude Include="modules\kuhl_m_process.h" />
+    <ClInclude Include="modules\kuhl_m_rdm.h" />
+    <ClInclude Include="modules\kuhl_m_sr98.h" />
     <ClInclude Include="modules\kuhl_m_rpc.h" />
     <ClInclude Include="modules\kuhl_m_service.h" />
     <ClInclude Include="modules\kuhl_m_service_remote.h" />
